@@ -1,0 +1,30 @@
+1. What is encapsulation?
+Grouping data and related methods together while controlling how data is accessed or modified.
+
+2. Does Python have strict private variables?
+No. Double underscores trigger name mangling, which helps prevent accidental access and naming conflicts.
+
+3. What is the difference between _marks and __marks?
+_marks is a protected-style naming convention. __marks triggers name mangling.
+
+4. What is a getter?
+A method or property that retrieves an attribute's value.
+
+5. What is a setter?
+A method or property setter that can validate and change an attribute's value.
+
+6. Why use @property?
+It lets you use method-backed logic with normal attribute syntax.
+
+7. Can a property be read-only?
+Yes. Define a property getter without defining its setter.
+
+8. What happens if you assign an invalid mark?
+A properly implemented setter can reject it with a validation error.
+
+9. Can a getter expose a mutable dictionary?
+Yes, but returning the original dictionary permits uncontrolled in-place changes. 
+Return a copy or use another controlled interface when necessary.
+
+10. Why calculate average as a property?
+It provides a convenient read-only value derived from the current marks, avoiding stale stored averages.

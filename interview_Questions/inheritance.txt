@@ -1,0 +1,32 @@
+Q1. What is inheritance?
+Inheritance lets a child class acquire attributes and methods from a parent class, supporting reuse and specialization.
+
+Q2. What is the difference between a parent and child class?
+The parent provides common behaviour; 
+the child inherits it and can add or override functionality.
+
+Q3. What is super()?
+It returns a proxy used to access the next implementation in the method resolution order. 
+It is often used to reuse parent initialization or methods.
+
+Q4. Does the parent __init__() run automatically when a child defines its own __init__()?
+No. The child must call super().__init__() when it wants the parent initializer to execute.
+
+Q5. What is method overriding?
+A child class defines a method with the same name as an inherited method to customize its behaviour.
+
+Q6. What is multiple inheritance?
+A class inherits from more than one parent class.
+
+Q7. What is MRO?
+Method Resolution Order specifies the sequence Python follows when looking up methods and attributes.
+
+Q8. What is the difference between multilevel and hierarchical inheritance?
+Multilevel forms a chain of inheritance. Hierarchical has multiple child classes inheriting from one parent.
+
+Q9. Can a child class access a parent's private-style attribute?
+Not directly by its original double-underscore name, because name mangling uses the defining class name. 
+Python privacy is not absolute.
+
+Q10. When should composition be preferred over inheritance?
+When an object has or uses another object rather than being a specialized form of that object.

@@ -1,0 +1,98 @@
+Q1. What is OOP in Python?
+Answer: Object-Oriented Programming is a programming approach that organizes data and related behaviours into objects.
+Example: In a Student Management System, a student has attributes such as name and marks, and methods such as display_details() and update_marks().
+
+Q2. What is the difference between a class and an object?
+Answer:
+- Class: A blueprint that defines attributes and methods.
+- Object: An instance created from that class.
+class Student:    
+    pass
+
+s1 = Student()
+s2 = Student()
+
+Student is the class. s1 and s2 are two separate objects.
+
+Q3. Why do we need classes?
+Answer: Classes allow us to organize related data and behaviours, reuse a common structure, 
+and create multiple objects without rewriting the same code.
+
+Q4. What is self?
+Answer: self refers to the current instance of the class. 
+It lets instance methods access or modify that object's attributes.
+class Student:    
+    def __init__(self, name):        
+        self.name = name    
+    def display(self):        
+        print(self.name)
+s1 = Student("Aswini")
+s1.display()
+
+Output:
+Aswini
+
+
+Q5. What is __init__()?
+Answer: It is an initializer that runs automatically after a new instance is created, 
+allowing us to set its initial attributes.
+def __init__(self, name, marks):    
+    self.name = name    
+    self.marks = marks
+
+Strictly speaking, __init__() initializes the object; it is not the method that creates the object itself.
+
+Q6. What are instance variables?
+Answer: Instance variables store data specific to an object.
+s1 = Student("Aswini", 85)
+s2 = Student("Rahul", 90)
+
+Each object has its own name and marks.
+
+Q7. What is an instance method?
+Answer: An instance method operates on a particular object and conventionally accepts self as its first parameter.
+def update_marks(self, new_marks):    
+    self.marks = new_marks
+
+Q8. What is the difference between a class variable and an instance variable?
+Answer:
+class Student:    
+    college_name = "ABC College"    
+    def __init__(self, name):        
+        self.name = name
+
+- college_name is a class variable.
+- name is an instance variable.
+The college name is shared through the class, whereas each student has an individual name.
+
+Q9. Can two objects of the same class contain different data?
+Answer: Yes. Each object has its own instance attributes.
+s1 = Student("Aswini")
+s2 = Student("Rahul")
+s1.name = "Priya"
+print(s1.name)
+print(s2.name)
+
+Output:
+Priya
+Rahul
+
+Q10. What is object state?
+Answer: Object state refers to the current values of its attributes.
+s1.marks = 85
+s1.marks = 95
+
+The object's state changes from 85 to 95.
+
+Q11. What happens if we don't define __init__()?
+Answer: Python can still create instances if the class permits it. 
+The objects will not automatically receive the custom initial attributes that an initializer would assign.
+
+Q12. Why is self not passed explicitly when calling an instance method?
+Answer: Python binds the instance to the method automatically.
+s1.display()
+
+Conceptually, this is equivalent to:
+Student.display(s1)
+
+assuming display is an ordinary instance method.
