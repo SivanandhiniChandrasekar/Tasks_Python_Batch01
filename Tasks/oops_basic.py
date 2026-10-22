@@ -1,7 +1,10 @@
 class Product():
     total_products = 0
     def __init__(self,product_id,product_name,price,stock_quantity,total_products):
-        pass 
+        self.product_id = product_id
+        self.product_name = product_name
+        self.price = price
+
         # TODO: initiate the attributes
         
     def update_price(self, product_name, updated_price):
