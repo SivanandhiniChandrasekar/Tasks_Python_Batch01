@@ -1,10 +1,10 @@
-# E-Commerce Management System — Day 1
+'''E-Commerce Management System — Day 1
 
-## Objective
+# Objective
 
 Create a simple E-Commerce Management System using basic Python OOP concepts.
 
-### Concepts to be used
+## Concepts to be used
 
 - Class and object
 - `__init__()` and `self`
@@ -12,15 +12,15 @@ Create a simple E-Commerce Management System using basic Python OOP concepts.
 - Instance methods
 - Object state modification
 
-## Scenario
+# Scenario
 
 An online store wants to maintain product details, update product prices, and check product availability.
 
 Create a `Product` class to manage these operations.
 
-## Requirements
-
-### 1. Create a `Product` class
+Requirements'''
+'''
+1. Create a `Product` class
 
 The class should contain the following attributes:
 
@@ -86,4 +86,54 @@ Total Products: 2
 4. Purchase products and check stock modification.
 5. Display the details of each product.
 
-**Condition:** Use only the concepts covered on Day 1. Do not use encapsulation, private attributes, getters, setters, or properties yet.
+**Condition:** Use only the concepts covered on Day 1. Do not use encapsulation, private attributes, getters, setters, or properties yet.'''
+
+class Product:
+    total_products = 0
+    def __init__(self,product_id,product_name,price,stock_quantity):
+        self.product_id = product_id
+        self.product_name = product_name
+        self.price = price
+        self.stock_quantity = stock_quantity
+
+        Product.total_products += 1
+
+    def update_price(self,new_price):
+        self.price = new_price
+        print("Price Updated Successfully !")
+
+    def purchase_product(self,quantity):
+        if self.stock_quantity >= quantity:
+            self.stock_quantity = self.stock_quantity - quantity
+            print("Purchase successfull ! ")
+        else:
+            print("Insuffficient stock")
+
+    def display_details(self):
+        print("Product ID : ", self.product_id)
+        print("Product Name : ", self.product_name)
+        print("Product Price : ", self.price)
+        print("Quantity : ", self.stock_quantity)
+
+p1 = Product("p01","Laptop",75000,15)
+p2 = Product("p02","Air Conditioner",30000,20)
+p3 = Product("p03","Air Fryer",5000,10)
+
+
+p3.update_price(5500)
+
+p1.purchase_product(2)
+p2.purchase_product(5)
+p3.purchase_product(3)
+
+p1.display_details()
+p2.display_details()
+p3.display_details()
+
+print("Total Products:", Product.total_products)
+
+
+
+    
+
+
